@@ -7,19 +7,22 @@
 
 <style>
 
-/* RESET */
-
 body{
 margin:0;
 font-family:Arial;
 color:white;
+background:#020617;
 overflow-x:hidden;
 }
 
 /* FOND ARK */
 
-body{
-background: radial-gradient(circle at center,#020617,#000814);
+.space{
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle at center,#0f172a,#020617);
+z-index:-3;
 }
 
 /* ETOILES */
@@ -29,13 +32,30 @@ position:fixed;
 width:100%;
 height:100%;
 background:url("https://www.transparenttextures.com/patterns/stardust.png");
-animation:starsMove 60s linear infinite;
+animation:moveStars 90s linear infinite;
+z-index:-2;
+}
+
+@keyframes moveStars{
+from{background-position:0 0;}
+to{background-position:10000px 5000px;}
+}
+
+/* PARTICULES */
+
+.particles{
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle,#00e5ff22 1px, transparent 1px);
+background-size:40px 40px;
+animation:particlesMove 40s linear infinite;
 z-index:-1;
 }
 
-@keyframes starsMove{
+@keyframes particlesMove{
 from{background-position:0 0;}
-to{background-position:10000px 5000px;}
+to{background-position:2000px 1000px;}
 }
 
 /* NAVBAR */
@@ -65,30 +85,41 @@ opacity:1;
 .hero{
 text-align:center;
 padding-top:120px;
-padding-bottom:200px;
+padding-bottom:160px;
 }
 
-/* LOGO TEK */
+/* HALO TEK */
+
+.halo{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+width:350px;
+height:350px;
+border-radius:50%;
+background:radial-gradient(circle,#00e5ff44,transparent);
+filter:blur(40px);
+z-index:-1;
+}
+
+/* LOGO */
 
 .logo{
 width:200px;
 border-radius:20px;
-margin-bottom:20px;
 
 box-shadow:
 0 0 20px #00e5ff,
 0 0 40px #00e5ff,
 0 0 80px #00e5ff;
 
-animation:tekGlow 3s infinite alternate;
+animation:glow 3s infinite alternate;
 }
 
-@keyframes tekGlow{
+@keyframes glow{
 
 0%{
-box-shadow:
-0 0 10px #00e5ff,
-0 0 30px #00e5ff;
+box-shadow:0 0 20px #00e5ff;
 }
 
 100%{
@@ -118,9 +149,7 @@ font-size:18px;
 border-radius:12px;
 cursor:pointer;
 margin:10px;
-
 box-shadow:0 0 20px rgba(0,229,255,0.7);
-
 transition:0.3s;
 }
 
@@ -129,25 +158,32 @@ transform:scale(1.1);
 box-shadow:0 0 40px rgba(0,229,255,1);
 }
 
-/* VAGUE */
+/* STATS */
 
-.wave{
-position:absolute;
-bottom:-1px;
-width:100%;
+.stats{
+display:flex;
+justify-content:center;
+gap:80px;
+padding:80px;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat h2{
+font-size:40px;
+color:#00e5ff;
 }
 
 /* FEATURES */
 
 .features{
-background:#020617;
-padding:120px 50px;
+padding:100px 50px;
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 }
-
-/* CARDS */
 
 .card{
 background:#111827;
@@ -157,20 +193,18 @@ border-radius:15px;
 width:260px;
 text-align:center;
 transition:0.4s;
-box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 30px rgba(0,229,255,0.4);
+box-shadow:0 0 30px rgba(0,229,255,0.5);
 }
 
 /* FOOTER */
 
 footer{
-background:#000814;
 text-align:center;
-padding:25px;
+padding:20px;
 opacity:0.6;
 }
 
@@ -180,7 +214,9 @@ opacity:0.6;
 
 <body>
 
+<div class="space"></div>
 <div class="stars"></div>
+<div class="particles"></div>
 
 <nav>
 
@@ -197,6 +233,8 @@ opacity:0.6;
 
 <section class="hero">
 
+<div class="halo"></div>
+
 <img src="LOGO_ARK_400x400.png" class="logo">
 
 <h1>BOTALPHARK</h1>
@@ -205,7 +243,7 @@ opacity:0.6;
 
 <a href="https://discord.com/oauth2/authorize?client_id=1478681103228342384&scope=bot%20applications.commands&permissions=8">
 
-<button class="button">Ajouter à Discord</button>
+<button class="button">Ajouter le bot</button>
 
 </a>
 
@@ -213,16 +251,24 @@ opacity:0.6;
 
 </section>
 
-<!-- VAGUE -->
+<section class="stats">
 
-<svg class="wave" viewBox="0 0 1440 320">
+<div class="stat">
+<h2 id="servers">0</h2>
+<p>Serveurs</p>
+</div>
 
-<path fill="#020617" fill-opacity="1"
-d="M0,224L80,213.3C160,203,320,181,480,197.3C640,213,800,267,960,266.7C1120,267,1280,213,1360,186.7L1440,160L1440,320L0,320Z">
+<div class="stat">
+<h2 id="users">0</h2>
+<p>Utilisateurs</p>
+</div>
 
-</path>
+<div class="stat">
+<h2 id="commands">0</h2>
+<p>Commandes exécutées</p>
+</div>
 
-</svg>
+</section>
 
 <section class="features">
 
@@ -243,7 +289,7 @@ d="M0,224L80,213.3C160,203,320,181,480,197.3C640,213,800,267,960,266.7C1120,267,
 
 <div class="card">
 <h3>🦖 ARK Tools</h3>
-<p>Status serveur ARK en direct</p>
+<p>Status serveur ARK</p>
 </div>
 
 </section>
@@ -253,6 +299,28 @@ d="M0,224L80,213.3C160,203,320,181,480,197.3C640,213,800,267,960,266.7C1120,267,
 <p>© 2026 BOTALPHARK</p>
 
 </footer>
+
+<script>
+
+/* SIMULATION STATS BOT */
+
+let servers = 150
+let users = 8200
+let commands = 450000
+
+setInterval(()=>{
+
+servers += Math.floor(Math.random()*2)
+users += Math.floor(Math.random()*8)
+commands += Math.floor(Math.random()*20)
+
+document.getElementById("servers").innerText = servers
+document.getElementById("users").innerText = users
+document.getElementById("commands").innerText = commands
+
+},2000)
+
+</script>
 
 </body>
 
