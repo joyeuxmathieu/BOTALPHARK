@@ -14,11 +14,18 @@ background:#0f172a;
 color:white;
 }
 
+/* NAVBAR */
+
 nav{
-background:#020617;
-padding:15px;
 display:flex;
 justify-content:space-between;
+align-items:center;
+padding:20px;
+background:#020617;
+}
+
+nav h2{
+margin:0;
 }
 
 nav a{
@@ -27,40 +34,72 @@ text-decoration:none;
 margin-left:20px;
 }
 
+/* HERO */
+
 .hero{
 text-align:center;
-padding:100px 20px;
+padding:120px 20px;
 }
 
 .hero h1{
-font-size:60px;
+font-size:70px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:22px;
+opacity:0.8;
 }
 
 .button{
 background:#5865F2;
 border:none;
-padding:15px 30px;
+padding:15px 35px;
 color:white;
 font-size:18px;
 border-radius:10px;
 cursor:pointer;
+margin:10px;
 }
+
+/* FEATURES */
 
 .features{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-padding:50px;
+padding:60px;
 }
 
 .card{
 background:#1e293b;
-padding:25px;
+padding:30px;
 margin:20px;
 border-radius:15px;
-width:250px;
+width:260px;
 text-align:center;
+transition:0.3s;
 }
+
+.card:hover{
+transform:scale(1.05);
+}
+
+/* STATS */
+
+.stats{
+text-align:center;
+padding:60px;
+background:#020617;
+}
+
+.stat{
+display:inline-block;
+margin:30px;
+font-size:22px;
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
@@ -74,11 +113,13 @@ background:#020617;
 <body>
 
 <nav>
-<h2>BOTALPHARK</h2>
+
+<h2>🤖 BOTALPHARK</h2>
 
 <div>
 <a href="#">Accueil</a>
 <a href="#">Fonctions</a>
+<a href="#">Commandes</a>
 <a href="#">Support</a>
 </div>
 
@@ -86,7 +127,7 @@ background:#020617;
 
 <section class="hero">
 
-<h1>🤖 BOTALPHARK</h1>
+<h1>BOTALPHARK</h1>
 
 <p>Le bot Discord complet pour ton serveur</p>
 
@@ -94,35 +135,56 @@ background:#020617;
 <button class="button">Ajouter le bot</button>
 </a>
 
+<button class="button">Dashboard</button>
+
 </section>
 
 <section class="features">
 
 <div class="card">
 <h3>💰 Economie</h3>
-<p>Système argent et boutique</p>
+<p>Balance, shop et inventaire</p>
 </div>
 
 <div class="card">
 <h3>⭐ Levels</h3>
-<p>XP et classement joueurs</p>
+<p>Système XP et classement</p>
 </div>
 
 <div class="card">
 <h3>👮 Modération</h3>
-<p>Ban, kick, mute et logs</p>
+<p>Ban, kick et logs</p>
 </div>
 
 <div class="card">
 <h3>🦖 ARK Tools</h3>
-<p>Statut serveur ARK</p>
+<p>Status serveur ARK</p>
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<h2>120+</h2>
+<p>Serveurs</p>
+</div>
+
+<div class="stat">
+<h2>15K+</h2>
+<p>Utilisateurs</p>
+</div>
+
+<div class="stat">
+<h2>99%</h2>
+<p>Uptime</p>
 </div>
 
 </section>
 
 <footer>
 
-<p>© BOTALPHARK 2026</p>
+<p>© 2026 BOTALPHARK</p>
 
 </footer>
 
