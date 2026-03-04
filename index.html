@@ -8,18 +8,35 @@
 <style>
 
 body{
+margin:0;
+font-family:Arial;
 background:#0f172a;
 color:white;
-font-family:Arial;
+}
+
+nav{
+background:#020617;
+padding:15px;
+display:flex;
+justify-content:space-between;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+.hero{
 text-align:center;
-padding:50px;
+padding:100px 20px;
 }
 
-h1{
-font-size:50px;
+.hero h1{
+font-size:60px;
 }
 
-button{
+.button{
 background:#5865F2;
 border:none;
 padding:15px 30px;
@@ -27,16 +44,28 @@ color:white;
 font-size:18px;
 border-radius:10px;
 cursor:pointer;
-margin:10px;
+}
+
+.features{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+padding:50px;
 }
 
 .card{
 background:#1e293b;
-padding:20px;
+padding:25px;
 margin:20px;
-border-radius:10px;
-display:inline-block;
+border-radius:15px;
 width:250px;
+text-align:center;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
 }
 
 </style>
@@ -44,34 +73,56 @@ width:250px;
 
 <body>
 
+<nav>
+<h2>BOTALPHARK</h2>
+
+<div>
+<a href="#">Accueil</a>
+<a href="#">Fonctions</a>
+<a href="#">Support</a>
+</div>
+
+</nav>
+
+<section class="hero">
+
 <h1>🤖 BOTALPHARK</h1>
 
-<p>Bot Discord inspiré de DraftBot et MEE6</p>
+<p>Le bot Discord complet pour ton serveur</p>
 
-<button>Ajouter le bot</button>
-<button>Support</button>
+<button class="button">Ajouter le bot</button>
 
-<br><br>
+</section>
+
+<section class="features">
 
 <div class="card">
-<h2>💰 Economie</h2>
-<p>Balance, shop, inventaire</p>
+<h3>💰 Economie</h3>
+<p>Système argent et boutique</p>
 </div>
 
 <div class="card">
-<h2>⭐ Levels</h2>
-<p>Système XP et classement</p>
+<h3>⭐ Levels</h3>
+<p>XP et classement joueurs</p>
 </div>
 
 <div class="card">
-<h2>👮 Modération</h2>
-<p>Ban, kick, logs</p>
+<h3>👮 Modération</h3>
+<p>Ban, kick, mute et logs</p>
 </div>
 
 <div class="card">
-<h2>🦖 ARK Tools</h2>
-<p>Status serveur ARK</p>
+<h3>🦖 ARK Tools</h3>
+<p>Statut serveur ARK</p>
 </div>
+
+</section>
+
+<footer>
+
+<p>© BOTALPHARK 2026</p>
+
+</footer>
 
 </body>
 </html>
