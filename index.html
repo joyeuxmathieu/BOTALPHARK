@@ -7,21 +7,35 @@
 
 <style>
 
-/* FOND ARK ANIME */
+/* RESET */
 
 body{
 margin:0;
 font-family:Arial;
 color:white;
-background:linear-gradient(270deg,#020617,#0f172a,#020617);
-background-size:600% 600%;
-animation:arkbg 20s ease infinite;
+overflow-x:hidden;
 }
 
-@keyframes arkbg{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+/* FOND ARK */
+
+body{
+background: radial-gradient(circle at center,#020617,#000814);
+}
+
+/* ETOILES */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:starsMove 60s linear infinite;
+z-index:-1;
+}
+
+@keyframes starsMove{
+from{background-position:0 0;}
+to{background-position:10000px 5000px;}
 }
 
 /* NAVBAR */
@@ -32,12 +46,18 @@ justify-content:space-between;
 align-items:center;
 padding:20px 40px;
 background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
 }
 
 nav a{
 color:white;
 text-decoration:none;
 margin-left:20px;
+opacity:0.8;
+}
+
+nav a:hover{
+opacity:1;
 }
 
 /* HERO */
@@ -51,9 +71,9 @@ padding-bottom:200px;
 /* LOGO TEK */
 
 .logo{
-width:180px;
-margin-bottom:20px;
+width:200px;
 border-radius:20px;
+margin-bottom:20px;
 
 box-shadow:
 0 0 20px #00e5ff,
@@ -65,13 +85,13 @@ animation:tekGlow 3s infinite alternate;
 
 @keyframes tekGlow{
 
-from{
+0%{
 box-shadow:
-0 0 20px #00e5ff,
-0 0 40px #00e5ff;
+0 0 10px #00e5ff,
+0 0 30px #00e5ff;
 }
 
-to{
+100%{
 box-shadow:
 0 0 40px #00e5ff,
 0 0 80px #00e5ff,
@@ -84,25 +104,23 @@ box-shadow:
 
 .hero h1{
 font-size:70px;
-margin:0;
+margin:10px;
 }
 
-.hero p{
-opacity:0.8;
-}
-
-/* BOUTON TEK */
+/* BOUTONS */
 
 .button{
 background:linear-gradient(45deg,#00e5ff,#4f46e5);
 border:none;
-padding:15px 30px;
+padding:15px 35px;
 color:white;
 font-size:18px;
 border-radius:12px;
 cursor:pointer;
 margin:10px;
+
 box-shadow:0 0 20px rgba(0,229,255,0.7);
+
 transition:0.3s;
 }
 
@@ -122,33 +140,38 @@ width:100%;
 /* FEATURES */
 
 .features{
-background:#111827;
-padding:100px 50px;
+background:#020617;
+padding:120px 50px;
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 }
 
+/* CARDS */
+
 .card{
-background:#1f2937;
+background:#111827;
 padding:30px;
 margin:20px;
 border-radius:15px;
 width:260px;
 text-align:center;
-transition:0.3s;
+transition:0.4s;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(0,229,255,0.4);
 }
 
 /* FOOTER */
 
 footer{
-background:#020617;
+background:#000814;
 text-align:center;
-padding:20px;
+padding:25px;
+opacity:0.6;
 }
 
 </style>
@@ -156,6 +179,8 @@ padding:20px;
 </head>
 
 <body>
+
+<div class="stars"></div>
 
 <nav>
 
@@ -192,7 +217,7 @@ padding:20px;
 
 <svg class="wave" viewBox="0 0 1440 320">
 
-<path fill="#111827" fill-opacity="1"
+<path fill="#020617" fill-opacity="1"
 d="M0,224L80,213.3C160,203,320,181,480,197.3C640,213,800,267,960,266.7C1120,267,1280,213,1360,186.7L1440,160L1440,320L0,320Z">
 
 </path>
