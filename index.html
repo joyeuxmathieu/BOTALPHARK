@@ -10,8 +10,11 @@
 body{
 margin:0;
 font-family:Arial;
-background:#0f172a;
 color:white;
+background:linear-gradient(#020617,#020617),
+url("https://images.unsplash.com/photo-1526401485004-2fda9f8a7d6f");
+background-size:cover;
+background-attachment:fixed;
 }
 
 /* NAVBAR */
@@ -20,41 +23,48 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
-background:#020617;
-}
-
-nav h2{
-margin:0;
+padding:20px 40px;
+background:rgba(0,0,0,0.6);
 }
 
 nav a{
 color:white;
 text-decoration:none;
 margin-left:20px;
+font-size:16px;
 }
 
 /* HERO */
 
 .hero{
 text-align:center;
-padding:120px 20px;
+padding-top:120px;
+padding-bottom:200px;
+}
+
+.logo{
+width:200px;
+margin-bottom:20px;
+border-radius:20px;
+box-shadow:0 20px 60px rgba(0,0,0,0.7);
 }
 
 .hero h1{
 font-size:70px;
-margin-bottom:10px;
+margin:0;
 }
 
 .hero p{
-font-size:22px;
 opacity:0.8;
+margin-bottom:20px;
 }
 
+/* BUTTON */
+
 .button{
-background:#5865F2;
+background:#4f46e5;
 border:none;
-padding:15px 35px;
+padding:15px 30px;
 color:white;
 font-size:18px;
 border-radius:10px;
@@ -62,17 +72,26 @@ cursor:pointer;
 margin:10px;
 }
 
+/* TEK WAVE */
+
+.wave{
+position:absolute;
+bottom:-1px;
+width:100%;
+}
+
 /* FEATURES */
 
 .features{
+background:#111827;
+padding:100px 50px;
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-padding:60px;
 }
 
 .card{
-background:#1e293b;
+background:#1f2937;
 padding:30px;
 margin:20px;
 border-radius:15px;
@@ -85,29 +104,16 @@ transition:0.3s;
 transform:scale(1.05);
 }
 
-/* STATS */
-
-.stats{
-text-align:center;
-padding:60px;
-background:#020617;
-}
-
-.stat{
-display:inline-block;
-margin:30px;
-font-size:22px;
-}
-
 /* FOOTER */
 
 footer{
+background:#020617;
 text-align:center;
 padding:20px;
-background:#020617;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -127,19 +133,32 @@ background:#020617;
 
 <section class="hero">
 
-<img src="LOGO_ARK_400x400.png" style="width:140px;">
+<img src="LOGO_ARK_400x400.png" class="logo">
 
 <h1>BOTALPHARK</h1>
 
-<p>Un bot pour ton serveur Discord</p>
+<p>Le bot Discord ultime pour ton serveur ARK</p>
 
 <a href="https://discord.com/oauth2/authorize?client_id=1478681103228342384&scope=bot%20applications.commands&permissions=8">
 
-<button class="button">Ajouter à Discord</button>
+<button class="button">Ajouter le bot</button>
 
 </a>
 
+<button class="button">Dashboard</button>
+
 </section>
+
+<!-- TEK WAVE -->
+
+<svg class="wave" viewBox="0 0 1440 320">
+
+<path fill="#111827" fill-opacity="1"
+d="M0,224L80,213.3C160,203,320,181,480,197.3C640,213,800,267,960,266.7C1120,267,1280,213,1360,186.7L1440,160L1440,320L0,320Z">
+
+</path>
+
+</svg>
 
 <section class="features">
 
@@ -155,31 +174,12 @@ background:#020617;
 
 <div class="card">
 <h3>👮 Modération</h3>
-<p>Ban, kick et logs</p>
+<p>Ban, kick, mute et logs</p>
 </div>
 
 <div class="card">
 <h3>🦖 ARK Tools</h3>
-<p>Status serveur ARK</p>
-</div>
-
-</section>
-
-<section class="stats">
-
-<div class="stat">
-<h2>120+</h2>
-<p>Serveurs</p>
-</div>
-
-<div class="stat">
-<h2>15K+</h2>
-<p>Utilisateurs</p>
-</div>
-
-<div class="stat">
-<h2>99%</h2>
-<p>Uptime</p>
+<p>Status serveur ARK en direct</p>
 </div>
 
 </section>
@@ -191,4 +191,5 @@ background:#020617;
 </footer>
 
 </body>
+
 </html>
