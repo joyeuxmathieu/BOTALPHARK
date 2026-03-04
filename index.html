@@ -280,24 +280,20 @@ opacity:0.6;
 
 <script>
 
-/* SIMULATION STATS BOT */
+async function loadStats(){
 
-let servers = 150
-let users = 8200
-let commands = 450000
+let res = await fetch("stats.json")
+let data = await res.json()
 
-setInterval(()=>{
+document.getElementById("servers").innerText = data.servers
+document.getElementById("users").innerText = data.users
+document.getElementById("commands").innerText = data.commands
 
-servers += Math.floor(Math.random()*2)
-users += Math.floor(Math.random()*8)
-commands += Math.floor(Math.random()*20)
+}
 
-document.getElementById("servers").innerText = servers
-document.getElementById("users").innerText = users
-document.getElementById("commands").innerText = commands
+loadStats()
 
-},2000)
-
+setInterval(loadStats,5000)
 </script>
 
 </body>
